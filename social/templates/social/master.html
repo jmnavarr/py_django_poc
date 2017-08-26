@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+
+    <link href="/static/css/main.css" type="text/css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    {% block js %}{% endblock js %}
+</head>
+<body>
+    <div class="container">
+        {% block body_header %}
+            <div class="row">
+                <div class="body-header col-xs-12">
+                    <h2>Social Media Mentions</h2>
+
+                    <div class="menu-options">
+                        <div class="menu-option-items">
+                            <a href="/social">Keywords</a> | <a href="/social/searchresults">Search Results</a>
+                        </div>
+                        <div class="menu-option-items logout-wrapper-div">
+                            <a href="/logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock body_header %}
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

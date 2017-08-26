@@ -1,0 +1,33 @@
+{% extends "social/master.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body_header %}
+    <div class="row">
+        <div class="body-header col-xs-12">
+            <h2>Social Media Mentions</h2>
+        </div>
+    </div>
+{% endblock body_header %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-3">
+            <h4>Login</h4>
+            <form action="/social/process_login" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" value="" id="username" name="username" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" value="" name="password" class="form-control" />
+                </div>
+                <div>
+                    <input type="submit" value="Login" class="btn btn-primary btn-sm" />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

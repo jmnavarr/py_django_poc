@@ -1,0 +1,37 @@
+--- REQUIRED PACKAGES
+    pip install django-mysql
+        -- used for EnumField in models.py
+
+
+--- CRON TO RUN PERIODICALLY
+    -- */15 * * * * python manage.py get_search_content     # get content from search sites every X mins
+
+--- SMTP DEBUGGING SERVICE
+    -- python -m smtpd -n -c DebuggingServer localhost:1025
+
+--- USEFUL RESOURCES:
+    python manage.py runserver
+
+    python manage.py startapp social
+
+    python manage.py makemigrations social
+    python manage.py sqlmigrate social 0001
+    python manage.py migrate
+
+    python manage.py shell
+        -- https://docs.djangoproject.com/en/1.11/intro/tutorial02/
+
+    python manage.py createsuperuser
+
+    python manage.py findstatic --verbosity 2 css/main.css
+    python manage.py collectstatic -link --noinput
+
+    Templates
+        -- https://docs.djangoproject.com/en/1.11/intro/tutorial03/
+
+    Authentication
+        -- https://docs.djangoproject.com/en/1.11/topics/auth/default/
+
+--- SQL QUERIES
+    -- select * from social_keyword; select * from social_keywordsinsocialmedia; select * from social_searchresults;
+    -- describe social_keyword; describe social_keywordsinsocialmedia; describe social_searchresults;
